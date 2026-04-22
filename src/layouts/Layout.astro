@@ -1,5 +1,4 @@
 ---
-import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
@@ -23,10 +22,17 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="bg-slate-950 text-white antialiased">
-    <Nav />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div class="lg:flex min-h-screen max-w-screen-xl mx-auto">
+
+      <aside class="lg:w-5/12 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto px-8 pt-16 pb-8 lg:px-16 lg:py-24">
+        <slot name="sidebar" />
+      </aside>
+
+      <main class="lg:w-7/12 px-8 lg:px-16 py-16 lg:py-24">
+        <slot />
+        <Footer />
+      </main>
+
+    </div>
   </body>
 </html>

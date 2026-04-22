@@ -1,7 +1,127 @@
 ---
+import swapImg from '../assets/swap.png';
+import ecommerceImg from '../assets/ecommerce.png';
+import dashboardImg from '../assets/dashboard.png';
+import daoImg from '../assets/dao.png';
+
+const projects = [
+  {
+    name: "Pool / Swap de Tokens ERC-20",
+    description:
+      "ERC-20 token swap system with added liquidity. Smart contracts connected to a live React interface deployed in production.",
+    tags: ["Solidity", "TypeScript", "React", "Vite", "Hardhat", "TailwindCSS"],
+    url: "https://swaperc20.netlify.app/",
+    devpost: null,
+    badge: null,
+    image: swapImg,
+  },
+  {
+    name: "DAO — Hackathon Ethereum 2024",
+    description:
+      "DAO built in 48 hours at the ETH KIPU Latam Academic Hackathon. Awarded first place among all participating teams.",
+    tags: ["Solidity", "Hardhat", "Scaffold-ETH", "Next.js", "TypeScript", "TailwindCSS"],
+    url: "https://hackatonbuildingdao.vercel.app/",
+    devpost: "https://devpost.com/software/buildingdao-democratic-desicion-making#",
+    badge: "🥇 1er lugar",
+    image: daoImg,
+  },
+  {
+    name: "Dashboard Financiero",
+    description:
+      "Fullstack app for managing transactions, charts, and report exports. Containerized architecture with Docker.",
+    tags: ["Next.js", "TypeScript", "React", "TailwindCSS", "Django", "PostgreSQL", "Docker"],
+    url: "https://django-dashboard-financial.vercel.app",
+    devpost: null,
+    badge: null,
+    image: dashboardImg,
+  },
+  {
+    name: "E-commerce B2C",
+    description:
+      "Online sales platform with a decoupled frontend and REST backend. Deployed in production with Firebase integration.",
+    tags: ["React", "Vite", "JavaScript", "Node.js", "Express", "Firebase", "TailwindCSS"],
+    url: "https://eshopdevices.netlify.app/",
+    devpost: null,
+    badge: null,
+    image: ecommerceImg,
+  },
+];
 ---
 
-<section id="projects" class="py-24 max-w-6xl mx-auto px-6">
-  <h2 class="text-3xl font-bold text-white mb-12">Projects</h2>
-  <p class="text-slate-400">Coming soon...</p>
+<section id="projects" class="py-20">
+  <h2 class="text-xs font-semibold tracking-widest uppercase text-amber-300/60 mb-10">
+    Selected Projects
+  </h2>
+
+  <div class="flex flex-col gap-6">
+    {projects.map((project) => (
+      <div class="group relative rounded-xl border border-slate-800 hover:border-slate-600 hover:bg-slate-900/50 transition-all duration-200 overflow-hidden">
+
+        {project.image && (
+          <div class="w-full overflow-hidden border-b border-slate-800">
+            <img
+              src={project.image.src}
+              alt={project.name}
+              class="w-full object-cover object-top max-h-48 group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        )}
+
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="text-white font-semibold text-base leading-snug">
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-amber-300 transition-colors inline-flex items-center gap-2"
+                >
+                  {project.name}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </a>
+              ) : (
+                project.name
+              )}
+            </h3>
+
+            <div class="flex items-center gap-2 shrink-0">
+              {project.badge && (
+                <span class="text-xs font-semibold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-1 rounded-full">
+                  {project.badge}
+                </span>
+              )}
+              {project.devpost && (
+                <a
+                  href={project.devpost}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-semibold text-slate-400 border border-slate-700 hover:border-slate-500 hover:text-white px-2 py-1 rounded-full transition-colors duration-200"
+                >
+                  Devpost ↗
+                </a>
+              )}
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            {project.description}
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span class="text-xs text-slate-500 bg-slate-800 px-2 py-1 rounded-md">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    ))}
+  </div>
 </section>

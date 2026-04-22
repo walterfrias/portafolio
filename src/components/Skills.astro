@@ -1,7 +1,51 @@
 ---
+const skills = [
+  {
+    category: "Languages",
+    items: ["Python", "TypeScript", "JavaScript", "Rust"],
+  },
+  {
+    category: "Frontend",
+    items: ["React", "Next.js", "Vite", "Angular", "Tailwind CSS", "HTML", "CSS"],
+  },
+  {
+    category: "Backend",
+    items: ["Django", "Flask", "Node.js", "Express", "NestJS"],
+  },
+  {
+    category: "Blockchain",
+    items: ["Solidity", "Hardhat", "Scaffold-ETH", "Wagmi", "Viem", "Anchor", "ERC-20 / ERC-721", "Sepolia", "Solana DevNet"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MySQL", "Firebase"],
+  },
+  {
+    category: "DevOps & Tools",
+    items: ["Docker", "Linux", "Git", "GitHub"],
+  },
+];
 ---
 
-<section id="skills" class="py-24 max-w-6xl mx-auto px-6">
-  <h2 class="text-3xl font-bold text-white mb-12">Skills</h2>
-  <p class="text-slate-400">Coming soon...</p>
+<section id="skills" class="py-20">
+  <h2 class="text-xs font-semibold tracking-widest uppercase text-amber-300/60 mb-10">
+    Skills
+  </h2>
+
+  <div class="flex flex-col gap-8">
+    {skills.map((group) => (
+      <div>
+        <p class="text-xs text-slate-600 uppercase tracking-widest mb-3">
+          {group.category}
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {group.items.map((item) => (
+            <span class="text-xs text-slate-400 border border-slate-800 px-3 py-1.5 rounded-full hover:border-slate-600 hover:text-slate-200 transition-colors duration-200">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
 </section>
