@@ -12,7 +12,7 @@ const projects = [
     tags: ["Solidity", "Hardhat", "Scaffold-ETH", "Next.js", "React", "TypeScript", "TailwindCSS"],
     url: "https://hackatonbuildingdao.vercel.app/",
     devpost: "https://devpost.com/software/buildingdao-democratic-desicion-making#",
-    badge: "🥇 1er lugar",
+    badge: "🥇 1st place",
     image: daoImg,
     contain: true,
   },
@@ -111,12 +111,24 @@ const projects = [
             {project.description}
           </p>
 
-          <div class="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span class="text-xs text-slate-300 bg-slate-800/60 px-2 py-1 rounded-md">
-                {tag}
-              </span>
-            ))}
+          <div class="flex items-center justify-between gap-2 mt-3">
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class="text-xs text-slate-300 bg-slate-800/60 px-2 py-1 rounded-md">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="md:hidden shrink-0 text-xs font-medium text-amber-300 border border-amber-300/30 hover:border-amber-300/70 px-3 py-1.5 rounded-full transition-colors duration-200 whitespace-nowrap"
+              >
+                Visit ↗
+              </a>
+            )}
           </div>
         </div>
 
