@@ -24,3 +24,8 @@ pnpm-debug.log*
 .idea/
 
 requerimientos.txt
+
+# capturas locales
+capturas_swap/
+capturas_E_Shop_Tech/
+capturas_finanzasCrtl/
