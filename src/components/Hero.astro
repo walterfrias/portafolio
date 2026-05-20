@@ -4,18 +4,18 @@
 <div class="flex flex-col h-full">
 
   <div class="flex-1 flex flex-col justify-center">
-    <p class="text-slate-500 text-sm font-mono mb-3">Hello, I'm</p>
+    <p class="text-slate-400 text-sm font-mono mb-3">Hello, I'm</p>
 
-    <h1 class="text-4xl font-bold text-white mb-2 leading-tight">
+    <h1 class="text-4xl font-bold text-white mb-2 leading-tight" style="font-family: 'Sora', sans-serif;">
       Walter Frias
     </h1>
 
-    <h2 class="text-base text-slate-400 font-medium mb-6 leading-snug">
+    <h2 class="text-base text-slate-300 font-medium mb-6 leading-snug">
       Full Stack Developer<br />
       Python · TypeScript
     </h2>
 
-    <p class="text-slate-500 text-sm leading-relaxed max-w-xs mb-16">
+    <p class="text-slate-400 text-sm leading-relaxed max-w-xs mb-16">
       Building web2 products and web3 protocols. I bring a visual arts
       background to every interface I craft.
     </p>
@@ -87,15 +87,29 @@
 <style>
 @keyframes amber-glow-pulse {
   0%, 100% {
+    color: inherit;
     text-shadow: none;
   }
-  50% {
-    text-shadow: 0 0 8px rgba(251, 191, 36, 0.45), 0 0 20px rgba(251, 191, 36, 0.15);
+  42% {
+    color: rgb(251, 191, 36);
+    text-shadow: 0 0 6px rgba(251, 191, 36, 1), 0 0 16px rgba(251, 191, 36, 0.75), 0 0 32px rgba(251, 191, 36, 0.4);
+  }
+  56% {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 1), 0 0 14px rgba(251, 191, 36, 0.5);
+  }
+  70% {
+    color: rgb(251, 191, 36);
+    text-shadow: 0 0 4px rgba(251, 191, 36, 0.3);
+  }
+  88% {
+    color: inherit;
+    text-shadow: none;
   }
 }
 
 .nav-glow {
-  animation: amber-glow-pulse 2.8s ease-in-out infinite;
+  animation: amber-glow-pulse 5s ease-in-out infinite;
 }
 
 a:hover .nav-glow {
