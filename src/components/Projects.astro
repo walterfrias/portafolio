@@ -3,6 +3,9 @@ import swapImg from '../assets/swap.png';
 import ecommerceImg from '../assets/ecommerce.png';
 import dashboardImg from '../assets/dashboard.png';
 import daoImg from '../assets/dao.png';
+import cooperadoraImg from '../assets/cooperadora.png';
+import cooperadoraDaoImg from '../assets/cooperadora_dao.png';
+import gestorImg from '../assets/gestor.png';
 
 const projects = [
   {
@@ -17,6 +20,17 @@ const projects = [
     contain: true,
   },
   {
+    name: "CooperaApp — SaaS for School Cooperatives",
+    description:
+      "Multi-tenant SaaS platform for Argentine school cooperatives. Each school gets its own DAO deployed on Base Sepolia via a Factory contract, with an ERC-20 COOP token minted per paid due. Includes 6-role RBAC, payment tracking, student enrollment and on-chain voting.",
+    tags: ["Django REST", "React", "TypeScript", "Vite", "PostgreSQL", "Docker", "Solidity"],
+    url: "https://cooperadora-escuela-27.vercel.app/",
+    devpost: null,
+    badge: "Web2 + Web3",
+    image: cooperadoraImg,
+    objectPosition: "object-top",
+  },
+  {
     name: "ERC-20 Token Pool / Swap",
     description:
       "ERC-20 token swap system with added liquidity. Smart contracts connected to a live React interface deployed in production.",
@@ -25,6 +39,17 @@ const projects = [
     devpost: null,
     badge: null,
     image: swapImg,
+  },
+  {
+    name: "Project Management System",
+    description:
+      "Fullstack project management app with role-based access (Admin/Operator), Kanban board, advanced filtering, pagination and CSV export. Built as the final project for Software Engineering at UNER.",
+    tags: ["Angular", "NestJS", "TypeScript", "PostgreSQL", "Docker"],
+    url: "https://integrador-des-app-web.vercel.app/",
+    devpost: null,
+    badge: null,
+    image: gestorImg,
+    objectPosition: "object-top",
   },
   {
     name: "Financial Dashboard",
