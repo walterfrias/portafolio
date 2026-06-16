@@ -207,6 +207,8 @@ edu = [
      "Full Stack Python + Django specialization  |  2022-2023  -  certified"),
     ("ISFA Manuel Belgrano",
      "National Teaching Degree in Visual Arts  |  2018-2024"),
+    ("ProCp",
+     "Ontological Leadership Coaching  |  2018"),
 ]
 
 for inst, detail in edu:
