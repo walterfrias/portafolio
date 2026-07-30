@@ -1,7 +1,6 @@
 ---
 import swapImg from '../assets/swap.png';
 import ecommerceImg from '../assets/ecommerce.png';
-import dashboardImg from '../assets/dashboard.png';
 import daoImg from '../assets/dao.png';
 import cooperadoraImg from '../assets/cooperadora.png';
 import cooperadoraDaoImg from '../assets/cooperadora_dao.png';
@@ -52,17 +51,6 @@ const projects = [
     objectPosition: "object-top",
   },
   {
-    name: "Financial Dashboard",
-    description:
-      "Fullstack app for managing transactions, charts, and report exports. Containerized architecture with Docker.",
-    tags: ["Next.js", "TypeScript", "React", "TailwindCSS", "Django", "PostgreSQL", "Docker"],
-    url: "https://django-dashboard-financial.vercel.app",
-    devpost: null,
-    badge: null,
-    image: dashboardImg,
-    objectPosition: "object-left md:object-top",
-  },
-  {
     name: "E-commerce B2C",
     description:
       "Online sales platform with a decoupled frontend and REST backend. Deployed in production with Firebase integration.",
@@ -101,7 +89,7 @@ const projects = [
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="hover:text-amber-300 transition-colors inline-flex items-center gap-2"
+                  class="hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 rounded-sm transition-colors inline-flex items-center gap-2"
                 >
                   {project.name}
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -126,7 +114,7 @@ const projects = [
                   href={project.devpost}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-xs font-semibold text-slate-400 border border-slate-700 hover:border-slate-500 hover:text-white px-2 py-1 rounded-full transition-colors duration-200"
+                  class="text-xs font-semibold text-slate-400 border border-slate-700 hover:border-slate-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 px-3 py-3 rounded-full transition-colors duration-200"
                 >
                   Devpost ↗
                 </a>
@@ -134,7 +122,7 @@ const projects = [
             </div>
           </div>
 
-          <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-2">
+          <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-3">
             {project.description}
           </p>
 
@@ -151,7 +139,7 @@ const projects = [
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="md:hidden shrink-0 text-xs font-medium text-amber-300 border border-amber-300/30 hover:border-amber-300/70 px-3 py-1.5 rounded-full transition-colors duration-200 whitespace-nowrap"
+                class="md:hidden shrink-0 text-xs font-medium text-amber-300 border border-amber-300/30 hover:border-amber-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 px-4 py-3 rounded-full transition-colors duration-200 whitespace-nowrap"
               >
                 Visit ↗
               </a>

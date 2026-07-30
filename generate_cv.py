@@ -141,15 +141,6 @@ projects = [
         "url": "https://swaperc20.netlify.app/",
     },
     {
-        "title": "Financial Dashboard App - Fullstack",
-        "stack": "Python / Django / Docker / Next.js / TypeScript / React / PostgreSQL",
-        "bullets": [
-            "Built a fullstack financial management app with transaction tracking, interactive charts and PDF report exports.",
-            "Dockerized frontend and backend as independent services; production images published on Docker Hub.",
-        ],
-        "url": "https://django-dashboard-financial.vercel.app/",
-    },
-    {
         "title": "E-Commerce Platform (B2C)",
         "stack": "Node.js / Express / Firebase / JavaScript / React / Vite / Tailwind",
         "bullets": [
