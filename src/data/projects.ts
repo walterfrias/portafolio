@@ -12,7 +12,7 @@ export const projects = [
     description:
       "Multi-tenant SaaS for restaurant operations, used daily in a real restaurant. Recipe costs and margins update automatically when supplier prices change, across 8 unit types. Includes stock counts, supplier orders via WhatsApp, daily cash and monthly cost reports, and 7 role-based views. Native mobile app in progress.",
     tags: ["Django REST", "PostgreSQL", "React", "TypeScript", "PWA", "React Native", "Expo"],
-    url: null,
+    url: "https://comanda-orcin.vercel.app/",
     devpost: null,
     badge: "In production",
     image: comandaImg,
