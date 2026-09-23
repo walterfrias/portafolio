@@ -11,6 +11,10 @@ const SUGGESTIONS = [
 // Keep in sync with MAX_TURNS in src/pages/api/chat.ts (must be odd so history starts with a user turn).
 const MAX_HISTORY = 19;
 
+// On touch screens, focusing the input pops the keyboard (and on iOS zooms the page),
+// so only autofocus where there's a real pointer.
+const canAutoFocus = () => window.matchMedia('(pointer: fine)').matches;
+
 export default function Chat() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -21,7 +25,7 @@ export default function Chat() {
   const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (open) inputRef.current?.focus();
+    if (open && canAutoFocus()) inputRef.current?.focus();
   }, [open]);
 
   useEffect(() => {
@@ -77,7 +81,7 @@ export default function Chat() {
         return last.content ? prev : [...prev.slice(0, -1), { ...last, content: 'No response. Please try again.' }];
       });
       setLoading(false);
-      inputRef.current?.focus();
+      if (canAutoFocus()) inputRef.current?.focus();
     }
   }
 
@@ -171,7 +175,7 @@ export default function Chat() {
                 }
               }}
               placeholder="Type a question…"
-              className="max-h-28 flex-1 resize-none rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-amber-300/60 focus:outline-none"
+              className="max-h-28 flex-1 resize-none rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-base sm:text-sm text-white placeholder:text-slate-500 focus:border-amber-300/60 focus:outline-none"
             />
             <button
               type="submit"
