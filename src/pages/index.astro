@@ -5,6 +5,7 @@ import About from '../components/About.astro';
 import Projects from '../components/Projects.astro';
 import Skills from '../components/Skills.astro';
 import Contact from '../components/Contact.astro';
+import Chat from '../components/Chat';
 ---
 
 <Layout>
@@ -13,4 +14,5 @@ import Contact from '../components/Contact.astro';
   <Projects />
   <Skills />
   <Contact />
+  <Chat client:idle />
 </Layout>
