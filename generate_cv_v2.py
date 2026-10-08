@@ -47,7 +47,7 @@ pdf.cell(TW, 10, "Walter Frias", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 pdf.set_font("Helvetica", "", 11)
 pdf.set_text_color(80, 80, 80)
 pdf.set_x(LM)
-pdf.cell(TW, 5, "Full Stack Developer  |  Web3", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+pdf.cell(TW, 5, "Full Stack Developer  |  Applied AI  |  Web3", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 pdf.ln(2)
 
 # ── CONTACT ───────────────────────────────────────────────────
@@ -68,25 +68,24 @@ pdf.set_font("Helvetica", "", 9)
 pdf.set_text_color(50, 50, 50)
 pdf.set_x(LM)
 pdf.multi_cell(TW, 5,
-    "Full Stack Developer specialized in web and Web3 applications, with hands-on experience "
-    "across the complete development cycle. I build scalable backend architectures, robust APIs, "
-    "and dynamic frontends, and integrate LLM APIs into real products. I have applied these skills "
-    "in blockchain environments, developing "
-    "and integrating smart contracts with complex business logic connected to frontend "
-    "applications. Background in visual arts and 9+ years of team leadership bring a unique "
-    "perspective to product and design decisions."
+    "Full Stack Developer who ships complete products, from database and API design to frontend "
+    "and deployment. I built and run Comanda, a multi-tenant SaaS used daily in a real restaurant, "
+    "and I integrate LLM APIs into real products (Claude API: streaming, prompt caching, grounded "
+    "system prompts). Also experienced in Web3, with a 1st-place Ethereum hackathon win. "
+    "Background in visual arts and 9+ years of team leadership bring a product and business "
+    "perspective to engineering decisions."
 )
 
 # ── SKILLS ────────────────────────────────────────────────────
 pdf.section_title("Technical Skills")
 skills = [
-    ("Languages",   "Python, JavaScript, TypeScript"),
+    ("Languages",   "Python, TypeScript, JavaScript"),
+    ("Backend",     "Django, Django REST Framework, Flask, Node.js, Express.js, NestJS"),
     ("Frontend",    "React, Next.js, Vite.js, Angular, Astro, Tailwind CSS, HTML, CSS"),
-    ("Backend",     "Django, Flask, Node.js, Express.js, NestJS"),
     ("AI & LLMs",   "Claude API (streaming, prompt caching, system prompts), MCP, Claude Code"),
-    ("Blockchain",  "Solidity, Hardhat, Scaffold-ETH, Viem, Wagmi, ERC20 / ERC721"),
     ("Databases",   "PostgreSQL, MySQL, Firebase"),
-    ("DevOps & OS", "Docker, Linux (shell scripting), Git / GitHub"),
+    ("DevOps & OS", "Docker, Linux (shell scripting), Git / GitHub, Vercel, Render"),
+    ("Blockchain",  "Solidity, Hardhat, Scaffold-ETH, Viem, Wagmi, ERC20 / ERC721"),
 ]
 COL = 40
 for label, value in skills:
@@ -120,18 +119,10 @@ projects = [
         "title": "Personal Portfolio with AI Chat Assistant",
         "stack": "Astro / React / TypeScript / Tailwind CSS / Claude API / Vercel",
         "bullets": [
-            "AI chat assistant grounded on my profile, built with Claude API (streaming + prompt caching).",
+            "AI chat assistant that answers recruiters' questions, grounded only on my profile data to avoid invented claims.",
+            "Server-side Claude API integration with streamed responses and prompt caching of the system prompt to cut latency and cost.",
         ],
         "url": "https://walterfrias.dev",
-    },
-    {
-        "title": "DAO - Ethereum Hackathon (1st Place)",
-        "stack": "Solidity / Hardhat / Scaffold-ETH / Next.js / TypeScript",
-        "bullets": [
-            "Won 1st place at ETH KIPU Latam 2024 hackathon building a consortium management DAO.",
-            "Implemented on-chain voting, proposal creation and fund management contracts in Solidity.",
-        ],
-        "url": "https://hackatonbuildingdao.vercel.app/",
     },
     {
         "title": "CooperaApp - SaaS for School Cooperatives",
@@ -141,6 +132,15 @@ projects = [
             "Integrated a Solidity Factory contract (Base Sepolia) that deploys an individual DAO with its own ERC-20 COOP token per school; token minted automatically on each payment.",
         ],
         "url": "https://cooperadora-escuela-27.vercel.app/",
+    },
+    {
+        "title": "DAO - Ethereum Hackathon (1st Place)",
+        "stack": "Solidity / Hardhat / Scaffold-ETH / Next.js / TypeScript",
+        "bullets": [
+            "Won 1st place at ETH KIPU Latam 2024 hackathon building a consortium management DAO.",
+            "Implemented on-chain voting, proposal creation and fund management contracts in Solidity.",
+        ],
+        "url": "https://hackatonbuildingdao.vercel.app/",
     },
     {
         "title": "Project Management System - Fullstack",
@@ -243,5 +243,5 @@ pdf.cell(TW, 5,
          "Spanish - Native     |     English - Intermediate (actively improving, private lessons 2025)",
          new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
-pdf.output("/home/xtsulyts/Escritorio/portafolio/Walter_Frias_CV_2026.pdf")
-print("CV generado: /home/xtsulyts/Escritorio/portafolio/Walter_Frias_CV_2026.pdf")
+pdf.output("/home/xtsulyts/Escritorio/portafolio/Walter_Frias_CV_2026_v2.pdf")
+print("CV generado: /home/xtsulyts/Escritorio/portafolio/Walter_Frias_CV_2026_v2.pdf")
