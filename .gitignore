@@ -36,3 +36,6 @@ generate_cv.py
 
 # vercel adapter build output
 .vercel/
+
+# notas locales
+research.md
