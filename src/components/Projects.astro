@@ -8,25 +8,31 @@ import { projects } from '../data/projects';
   </h2>
 
   <div class="flex flex-col gap-6">
-    {projects.map((project) => (
-      <div class="group relative rounded-xl border border-slate-800 hover:border-slate-600 active:scale-[0.98] active:border-amber-300/30 transition-all duration-300 overflow-hidden h-96">
+    {projects.map((project, i) => (
+      <>
+      {project.secondary && !projects[i - 1]?.secondary && (
+        <h3 class="text-xs font-semibold tracking-widest uppercase text-slate-400 mt-10">
+          Other work
+        </h3>
+      )}
+      <div class="group relative rounded-xl border border-slate-800 hover:border-slate-600 active:scale-[0.98] active:border-amber-300/30 transition-all duration-300 overflow-hidden min-h-96 flex flex-col justify-end">
 
         {project.image ? (
           <img
             src={project.image.src}
             alt={project.name}
-            class={`w-full h-full group-hover:scale-105 transition-transform duration-500 object-cover ${project.contain ? 'object-center' : project.objectPosition ?? 'object-top'}`}
+            class={`absolute inset-0 w-full h-full group-hover:scale-105 transition-transform duration-500 object-cover ${project.contain ? 'object-center' : project.objectPosition ?? 'object-top'}`}
           />
         ) : (
-          <div aria-hidden="true" class="w-full h-full bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/50 p-8">
+          <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/50 p-8">
             <span class="text-4xl font-bold text-slate-700 group-hover:text-slate-600 transition-colors duration-500" style="font-family: 'Sora', sans-serif;">
               {project.name.split(' — ')[0]}
             </span>
           </div>
         )}
 
-        <div class="absolute bottom-0 left-0 right-0 p-5 bg-slate-950/85 group-hover:bg-slate-950/30 backdrop-blur-sm group-hover:backdrop-blur-none transition-all duration-500">
-          <div class="flex items-start justify-between gap-4 mb-2">
+        <div class="relative p-5 bg-slate-950/85 group-hover:bg-slate-950/30 backdrop-blur-sm group-hover:backdrop-blur-none transition-all duration-500">
+          <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 mb-2">
             <h3 class="text-white font-semibold text-base leading-snug">
               {project.url ? (
                 <a
@@ -47,12 +53,12 @@ import { projects } from '../data/projects';
               )}
             </h3>
 
-            <div class="flex items-center gap-2 shrink-0">
-              {project.badge && (
+            <div class="flex flex-wrap items-center justify-end gap-2 shrink-0">
+              {[project.badge].flat().filter(Boolean).map((badge) => (
                 <span class="text-xs font-semibold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-1 rounded-full">
-                  {project.badge}
+                  {badge}
                 </span>
-              )}
+              ))}
               {project.devpost && (
                 <a
                   href={project.devpost}
@@ -66,7 +72,7 @@ import { projects } from '../data/projects';
             </div>
           </div>
 
-          <p class="text-slate-300 text-sm leading-relaxed mb-3 line-clamp-3">
+          <p class="text-slate-300 text-sm leading-relaxed mb-3">
             {project.description}
           </p>
 
@@ -92,6 +98,7 @@ import { projects } from '../data/projects';
         </div>
 
       </div>
+      </>
     ))}
   </div>
 </section>

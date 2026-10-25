@@ -8,7 +8,11 @@ import { skills } from '../data/skills';
   </h2>
 
   <div class="flex flex-col gap-8">
-    {skills.map((group) => (
+    {skills.map((group) => group.minor ? (
+      <p class="text-xs text-slate-500">
+        {group.category}: {group.items.join(' · ')}
+      </p>
+    ) : (
       <div>
         <p class="text-xs text-slate-300 uppercase tracking-widest mb-3">
           {group.category}

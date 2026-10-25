@@ -1,30 +1,24 @@
+// `minor` groups render as a single muted line instead of pills.
 export const skills = [
   {
-    category: "Languages",
-    items: ["Python", "TypeScript"],
+    category: "Applied AI",
+    items: ["Claude API", "Vision / document extraction", "Structured outputs", "MCP servers", "AI-assisted development (Claude Code)"],
   },
   {
-    category: "Frontend",
-    items: ["React", "Next.js", "Vite", "Angular", "Tailwind CSS", "HTML", "CSS"],
+    category: "Product & Operations",
+    items: ["Product discovery", "Process design", "Team leadership", "Cost control", "End-to-end ownership"],
   },
   {
-    category: "Backend",
-    items: ["Django", "Flask", "Node.js", "Express", "NestJS"],
+    category: "Stack",
+    items: ["Python", "Django", "TypeScript", "React", "Next.js", "React Native / Expo", "Angular", "Node.js (Express, NestJS)", "PostgreSQL", "Docker", "Linux", "Ubuntu Server"],
   },
   {
     category: "Blockchain",
-    items: ["Solidity", "Hardhat", "Scaffold-ETH", "Wagmi", "Viem", "Anchor", "ERC-20 / ERC-721", "Sepolia", "Solana DevNet"],
+    items: ["Solidity", "Hardhat", "Wagmi", "ERC-20 / ERC-721"],
   },
   {
-    category: "Databases",
-    items: ["PostgreSQL", "MySQL", "Firebase"],
-  },
-  {
-    category: "Infrastructure & DevOps",
-    items: ["Docker", "Ubuntu Server", "Linux", "Git", "GitHub"],
-  },
-  {
-    category: "AI & Tooling",
-    items: ["MCP Servers", "Claude API", "AI APIs"],
+    category: "Also worked with",
+    items: ["Flask", "MySQL", "Firebase", "Vite", "Tailwind CSS"],
+    minor: true,
   },
 ];

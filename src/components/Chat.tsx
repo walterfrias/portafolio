@@ -5,7 +5,7 @@ type Message = { role: 'user' | 'assistant'; content: string };
 const SUGGESTIONS = [
   'What has Walter built?',
   'Is he available for freelance work?',
-  '¿Qué experiencia tiene en Web3?',
+  '¿Qué problemas reales resolvió?',
 ];
 
 // Keep in sync with MAX_TURNS in src/pages/api/chat.ts (must be odd so history starts with a user turn).
