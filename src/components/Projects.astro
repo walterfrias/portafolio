@@ -21,7 +21,7 @@ import { projects } from '../data/projects';
           <img
             src={project.image.src}
             alt={project.name}
-            class={`absolute inset-0 w-full h-full group-hover:scale-105 transition-transform duration-500 object-cover ${project.contain ? 'object-center' : project.objectPosition ?? 'object-top'}`}
+            class={`${project.secondary ? 'absolute inset-0 h-full' : 'relative aspect-video md:absolute md:inset-0 md:aspect-auto md:h-full'} w-full group-hover:scale-105 transition-transform duration-500 object-cover ${project.contain ? 'object-center' : project.objectPosition ?? 'object-top'}`}
           />
         ) : (
           <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/50 p-8">

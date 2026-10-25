@@ -18,7 +18,7 @@ export const projects = [
     image: comandaImg,
     objectPosition: "object-left-top",
     // Long description: taller card so the screenshot still shows above the text.
-    cardHeight: "min-h-96 md:min-h-[38rem] xl:min-h-[34rem]",
+    cardHeight: "md:min-h-[38rem] xl:min-h-[34rem]",
   },
   {
     name: "Automated Trading Bots — Hyperliquid",
@@ -27,10 +27,10 @@ export const projects = [
     tags: ["Python", "asyncio", "Hyperliquid SDK", "systemd", "Ubuntu Server", "Telegram Bot API", "Backtesting"],
     url: null,
     devpost: null,
-    badge: "Live 24/7",
+    badge: "In production",
     image: botsImg,
     objectPosition: "object-center",
-    cardHeight: "min-h-96 md:min-h-[34rem] xl:min-h-[30rem]",
+    cardHeight: "md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
     name: "CooperaApp — Transparency for School Cooperatives",
@@ -42,7 +42,7 @@ export const projects = [
     badge: ["Web2 + Web3", "Launching 2027"],
     image: cooperadoraImg,
     objectPosition: "object-top",
-    cardHeight: "min-h-96 md:min-h-[34rem] xl:min-h-[30rem]",
+    cardHeight: "md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
     name: "DAO — Hackathon Ethereum 2024",
