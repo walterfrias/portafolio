@@ -10,7 +10,7 @@ export const projects = [
   {
     name: "Comanda — Restaurant Management SaaS",
     description:
-      "Multi-tenant SaaS for restaurant operations, used daily in a real restaurant. Recipe costs and margins update automatically when supplier prices change, across 8 unit types. Includes stock counts, supplier orders via WhatsApp, daily cash and monthly cost reports, and 7 role-based views. In development: a mobile app where managers photograph a supplier invoice and Claude's vision model extracts supplier, date, line items and total as structured data, flagging anything unreadable. The manager reviews and confirms before anything is saved.",
+      "Multi-tenant SaaS for restaurant operations, used daily by 10 users across 2 restaurants and saving an estimated 40+ hours of manual work per month. Recipe costs and margins update automatically when supplier prices change, across 8 unit types. Includes stock counts, supplier orders via WhatsApp, daily cash and monthly cost reports, and 7 role-based views. In development: a mobile app where managers photograph a supplier invoice and Claude's vision model extracts supplier, date, line items and total as structured data, flagging anything unreadable. The manager reviews and confirms before anything is saved.",
     tags: ["Django REST", "Python", "PostgreSQL", "React", "TypeScript", "PWA", "React Native", "Expo", "Claude API", "Structured outputs"],
     url: "https://www.comanda.com.ar/",
     devpost: null,
