@@ -33,6 +33,7 @@ capturas_finanzasCrtl/
 # CV
 Walter_Frias_CV_2026.pdf
 generate_cv.py
+cv_envio/
 
 # vercel adapter build output
 .vercel/

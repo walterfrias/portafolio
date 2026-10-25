@@ -1,4 +1,12 @@
+import sys
+from pathlib import Path
+
 from fpdf import FPDF, XPos, YPos
+
+# Default: public version served from the website, without phone number.
+# `--send`: version to send directly to recruiters, with phone (from cv_envio/telefono.txt),
+# saved in cv_envio/ (gitignored).
+SEND = "--send" in sys.argv
 
 LM = 17   # left margin
 RM = 17   # right margin
@@ -47,14 +55,19 @@ pdf.cell(TW, 10, "Walter Frias", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 pdf.set_font("Helvetica", "", 11)
 pdf.set_text_color(80, 80, 80)
 pdf.set_x(LM)
-pdf.cell(TW, 5, "Full Stack Developer  |  Web3", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+pdf.cell(TW, 5, "Product Engineer  |  Applied AI  |  10+ years in operations", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 pdf.ln(2)
 
 # ── CONTACT ───────────────────────────────────────────────────
 pdf.set_font("Helvetica", "", 9)
 pdf.set_text_color(50, 50, 50)
 pdf.set_x(LM)
-pdf.cell(TW, 5, "Buenos Aires, Argentina   |   walter.frias.dev@gmail.com   |   +54 9 11 3486 3363",
+contact = "Buenos Aires, Argentina   |   walter.frias.dev@gmail.com"
+if SEND:
+    # The phone lives in a gitignored file so it never reaches the public repo.
+    phone = (Path(__file__).parent / "cv_envio" / "telefono.txt").read_text().strip()
+    contact += f"   |   {phone}"
+pdf.cell(TW, 5, contact,
          new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
 pdf.set_text_color(0, 80, 180)
@@ -68,106 +81,57 @@ pdf.set_font("Helvetica", "", 9)
 pdf.set_text_color(50, 50, 50)
 pdf.set_x(LM)
 pdf.multi_cell(TW, 5,
-    "Full Stack Developer specialized in web and Web3 applications, with hands-on experience "
-    "across the complete development cycle. I build scalable backend architectures, robust APIs, "
-    "and dynamic frontends, and integrate LLM APIs into real products. I have applied these skills "
-    "in blockchain environments, developing "
-    "and integrating smart contracts with complex business logic connected to frontend "
-    "applications. Background in visual arts and 9+ years of team leadership bring a unique "
-    "perspective to product and design decisions."
+    "Product Engineer with 10+ years managing a business in Buenos Aires. I find real operational "
+    "problems and build the software that solves them, end to end: Django and React web apps, "
+    "React Native mobile, applied AI with the Claude API, and self-hosted services running 24/7. "
+    "My systems run in production with real users and real money: a restaurant management SaaS "
+    "used daily by 10 users across 2 restaurants, saving an estimated 40+ hours of manual work per month, "
+    "and two trading bots I built and operate."
 )
-
-# ── SKILLS ────────────────────────────────────────────────────
-pdf.section_title("Technical Skills")
-skills = [
-    ("Languages",   "Python, JavaScript, TypeScript"),
-    ("Frontend",    "React, Next.js, Vite.js, Angular, Astro, Tailwind CSS, HTML, CSS"),
-    ("Backend",     "Django, Flask, Node.js, Express.js, NestJS"),
-    ("AI & LLMs",   "Claude API (streaming, prompt caching, system prompts), MCP, Claude Code"),
-    ("Blockchain",  "Solidity, Hardhat, Scaffold-ETH, Viem, Wagmi, ERC20 / ERC721"),
-    ("Databases",   "PostgreSQL, MySQL, Firebase"),
-    ("DevOps & OS", "Docker, Linux (shell scripting), Git / GitHub"),
-]
-COL = 40
-for label, value in skills:
-    y = pdf.get_y()
-    # label
-    pdf.set_font("Helvetica", "B", 9)
-    pdf.set_text_color(30, 30, 30)
-    pdf.set_xy(LM, y)
-    pdf.cell(COL, 5, f"{label}:", new_x=XPos.RIGHT, new_y=YPos.TOP)
-    # value
-    pdf.set_font("Helvetica", "", 9)
-    pdf.set_text_color(50, 50, 50)
-    pdf.set_xy(LM + COL, y)
-    pdf.multi_cell(TW - COL, 5, value)
 
 # ── PROJECTS ──────────────────────────────────────────────────
 pdf.section_title("Projects")
 
 projects = [
     {
-        "title": "Comanda - Restaurant Management SaaS (In Production)",
-        "stack": "Django REST Framework / PostgreSQL / React / TypeScript / PWA / React Native / Expo",
+        "title": "Comanda - Restaurant Management SaaS (In Production, 2026 - Present)",
+        "stack": "Python / Django REST Framework / PostgreSQL / React / TypeScript / PWA / React Native / Expo / Claude API",
         "bullets": [
-            "Built a multi-tenant SaaS for restaurant operations, used daily in a real restaurant, with 7 role-based views.",
+            "In daily production use by 10 users across 2 restaurants since mid-2026, saving an estimated 40+ hours "
+            "per month of manual Excel work across purchasing, management and kitchen staff.",
+            "Multi-tenant from day one: the second restaurant was onboarded on the same platform. "
+            "Managers check the business numbers in real time from their phones.",
             "Recipe costs and margins recalculate automatically when supplier prices change, across 8 unit types.",
-            "Includes stock counts, supplier orders via WhatsApp, and daily cash and monthly cost reports; native mobile app in progress.",
+            "Stock counts, supplier orders via WhatsApp, daily cash and monthly cost reports, 7 role-based views.",
+            "In development: mobile app with AI invoice reading (Claude vision + structured outputs), "
+            "reviewed by the manager before anything is saved.",
         ],
         "url": "https://www.comanda.com.ar/",
     },
     {
-        "title": "Personal Portfolio with AI Chat Assistant",
-        "stack": "Astro / React / TypeScript / Tailwind CSS / Claude API / Vercel",
+        "title": "Automated Trading Bots - Hyperliquid (Live 24/7 since April 2026)",
+        "stack": "Python / asyncio / Hyperliquid SDK / systemd / Ubuntu Server / Telegram Bot API",
         "bullets": [
-            "AI chat assistant grounded on my profile, built with Claude API (streaming + prompt caching).",
+            "Built and operate two bots trading real capital 24/7 on a self-hosted Ubuntu server, "
+            "with systemd auto-restart and Telegram status alerts.",
+            "HL-Delta runs a delta-neutral funding-rate strategy with automatic coin rotation; "
+            "HL-Spot trades BTC on a backtested signal with partial take-profits.",
+            "Wrote the postmortem of a production incident (a silent order failure that led to a liquidation) "
+            "and shipped the fixes: every order is now validated before the next action.",
         ],
-        "url": "https://walterfrias.dev",
+        "url": None,
     },
     {
-        "title": "DAO - Ethereum Hackathon (1st Place)",
-        "stack": "Solidity / Hardhat / Scaffold-ETH / Next.js / TypeScript",
-        "bullets": [
-            "Won 1st place at ETH KIPU Latam 2024 hackathon building a consortium management DAO.",
-            "Implemented on-chain voting, proposal creation and fund management contracts in Solidity.",
-        ],
-        "url": "https://hackatonbuildingdao.vercel.app/",
-    },
-    {
-        "title": "CooperaApp - SaaS for School Cooperatives",
+        "title": "CooperaApp - Transparency for School Cooperatives (Launching 2027)",
         "stack": "Django REST Framework / React / TypeScript / Vite / PostgreSQL / Docker / Solidity",
         "bullets": [
-            "Built a multi-tenant SaaS platform for Argentine school cooperatives with 6-role RBAC, subscription lifecycle management and path-based tenant routing.",
-            "Integrated a Solidity Factory contract (Base Sepolia) that deploys an individual DAO with its own ERC-20 COOP token per school; token minted automatically on each payment.",
+            "Born from my term as cooperative president: parents distrusted how dues and funds were handled, "
+            "because that information never left the cooperative.",
+            "Gives every family visibility into paid dues, funds raised and school news; multi-tenant with 6-role RBAC.",
+            "Launching without blockchain, since parents don't need a DAO to trust the numbers; a DAO-per-school "
+            "version with its own ERC-20 token is built on Base Sepolia (testnet) for a later scale-up.",
         ],
         "url": "https://cooperadora-escuela-27.vercel.app/",
-    },
-    {
-        "title": "Project Management System - Fullstack",
-        "stack": "Angular / NestJS / TypeScript / PostgreSQL / Docker",
-        "bullets": [
-            "Built a fullstack project management app with role-based access (Admin/Operator), Kanban board, advanced filtering, pagination and CSV export.",
-            "Designed REST API with NestJS covering projects, clients, tasks and user assignments; containerized with Docker.",
-        ],
-        "url": "https://integrador-des-app-web.vercel.app/",
-    },
-    {
-        "title": "ERC-20 Token Swap Pool",
-        "stack": "Solidity / Hardhat / TypeScript / React / Vite / Tailwind / Wagmi",
-        "bullets": [
-            "Implemented ERC-20 liquidity pool with deposit, withdrawal and swap logic in Solidity from scratch.",
-            "Connected on-chain contract calls to a React frontend via Wagmi; deployed on Sepolia testnet.",
-        ],
-        "url": "https://swaperc20.netlify.app/",
-    },
-    {
-        "title": "E-Commerce Platform (B2C)",
-        "stack": "Node.js / Express / Firebase / JavaScript / React / Vite / Tailwind",
-        "bullets": [
-            "Developed a complete B2C e-commerce platform with product catalog, shopping cart and checkout flow.",
-            "Built a decoupled REST API with Node.js and Express, persisted with Firebase, deployed on Render.",
-        ],
-        "url": "https://eshopdevices.netlify.app/",
     },
 ]
 
@@ -186,30 +150,95 @@ for p in projects:
     for b in p["bullets"]:
         pdf.bullet(b)
 
-    pdf.set_font("Helvetica", "", 8)
-    pdf.set_text_color(0, 80, 180)
-    pdf.set_x(LM + 4)
-    pdf.cell(TW - 4, 4, p["url"], new_x=XPos.LMARGIN, new_y=YPos.NEXT, link=p["url"])
-    pdf.set_text_color(50, 50, 50)
+    if p["url"]:
+        pdf.set_font("Helvetica", "", 8)
+        pdf.set_text_color(0, 80, 180)
+        pdf.set_x(LM + 4)
+        pdf.cell(TW - 4, 4, p["url"], new_x=XPos.LMARGIN, new_y=YPos.NEXT, link=p["url"])
+        pdf.set_text_color(50, 50, 50)
     pdf.ln(2)
 
+# ── OTHER WORK ────────────────────────────────────────────────
+pdf.section_title("Other Work")
+other = [
+    ("DAO - Ethereum Hackathon, 1st place ETH KIPU Latam 2024", "Solidity, Hardhat, Next.js",
+     "https://hackatonbuildingdao.vercel.app/"),
+    ("ERC-20 Token Swap Pool", "Solidity, React, Wagmi",
+     "https://swaperc20.netlify.app/"),
+    ("Project Management System", "Angular, NestJS, PostgreSQL, Docker",
+     "https://integrador-des-app-web.vercel.app/"),
+    ("Portfolio with AI chat assistant", "Astro, React, Claude API",
+     "https://walterfrias.dev"),
+]
+for title, stack, url in other:
+    pdf.set_x(LM)
+    pdf.set_font("Helvetica", "B", 9)
+    pdf.set_text_color(20, 20, 20)
+    pdf.write(5, title)
+    pdf.set_font("Helvetica", "I", 8)
+    pdf.set_text_color(100, 100, 100)
+    pdf.write(5, f"  ({stack})  ")
+    pdf.set_font("Helvetica", "", 8)
+    pdf.set_text_color(0, 80, 180)
+    pdf.write(5, url.removeprefix("https://").rstrip("/"), link=url)
+    pdf.ln(5)
+pdf.set_text_color(50, 50, 50)
+
 # ── EXPERIENCE ────────────────────────────────────────────────
+# Keep the experience section together instead of splitting it at the page bottom.
+if pdf.get_y() > 230:
+    pdf.add_page()
 pdf.section_title("Professional Experience")
 pdf.set_font("Helvetica", "B", 9)
 pdf.set_text_color(20, 20, 20)
 pdf.set_x(LM)
 pdf.cell(TW, 5, "General Manager  |  Private Business, Buenos Aires  |  2016 - Present",
          new_x=XPos.LMARGIN, new_y=YPos.NEXT)
-pdf.bullet("Led and managed a team of up to 10 people in daily operations.")
-pdf.bullet("Optimized operational processes and resolved high-pressure situations.")
-pdf.bullet("Developed strong skills in communication, conflict resolution, and team coordination.")
+pdf.bullet("Lead a team of up to 10 people in daily operations.")
+pdf.bullet("Own cost control, supplier management and daily cash: the operational knowledge behind the software I build.")
+pdf.bullet("Resolve high-pressure situations and coordinate across teams and suppliers.")
+pdf.ln(2)
+
+pdf.set_font("Helvetica", "B", 9)
+pdf.set_text_color(20, 20, 20)
+pdf.set_x(LM)
+pdf.cell(TW, 5, "President  |  School Cooperative  |  2025",
+         new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+pdf.bullet("Managed the cooperative's dues, funds and communication with families.")
+pdf.bullet("Identified the trust problem around how funds were reported, which led to building CooperaApp.")
+
+# ── SKILLS ────────────────────────────────────────────────────
+pdf.section_title("Skills")
+skills = [
+    ("Applied AI",       "Claude API (vision, structured outputs, streaming, prompt caching), MCP servers, "
+                         "AI-assisted development (Claude Code)"),
+    ("Product & Ops",    "Product discovery, process design, team leadership, cost control, end-to-end ownership"),
+    ("Stack",            "Python, Django, TypeScript, React, Next.js, React Native / Expo, Angular, "
+                         "Node.js (Express, NestJS), PostgreSQL, Docker, Linux, Ubuntu Server"),
+    ("Blockchain",       "Solidity, Hardhat, Wagmi, ERC-20 / ERC-721"),
+    ("Also worked with", "Flask, MySQL, Firebase, Vite, Tailwind CSS"),
+]
+COL = 40
+for label, value in skills:
+    y = pdf.get_y()
+    # label
+    pdf.set_font("Helvetica", "B", 9)
+    pdf.set_text_color(30, 30, 30)
+    pdf.set_xy(LM, y)
+    pdf.cell(COL, 5, f"{label}:", new_x=XPos.RIGHT, new_y=YPos.TOP)
+    # value
+    pdf.set_font("Helvetica", "", 9)
+    pdf.set_text_color(50, 50, 50)
+    pdf.set_xy(LM + COL, y)
+    pdf.multi_cell(TW - COL, 5, value)
+
 
 # ── EDUCATION ─────────────────────────────────────────────────
 pdf.section_title("Education & Certifications")
 
 edu = [
     ("Universidad Nacional de Entre Rios (UNER)",
-     "B.Tech in Web Development  |  2024 - Present"),
+     "Tecnicatura Universitaria en Desarrollo Web (Web Development degree)  |  2024 - 2026"),
     ("ETH KIPU Latam",
      "Ethereum Developer Pack  |  2024  -  on-chain certificate"),
     ("Talento Tech - Buenos Aires Ministry of Education",
@@ -240,8 +269,11 @@ pdf.set_font("Helvetica", "", 9)
 pdf.set_text_color(50, 50, 50)
 pdf.set_x(LM)
 pdf.cell(TW, 5,
-         "Spanish - Native     |     English - Intermediate (actively improving, private lessons 2025)",
+         "Spanish - Native     |     English - Intermediate (actively improving with formal classes)",
          new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
-pdf.output("/home/xtsulyts/Escritorio/portafolio/Walter_Frias_CV_2026.pdf")
-print("CV generado: /home/xtsulyts/Escritorio/portafolio/Walter_Frias_CV_2026.pdf")
+out_dir = Path("/home/xtsulyts/Escritorio/portafolio") / ("cv_envio" if SEND else "")
+out_dir.mkdir(exist_ok=True)
+out = out_dir / "Walter_Frias_CV_2026.pdf"
+pdf.output(str(out))
+print(f"CV generado: {out}")
