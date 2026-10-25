@@ -30,6 +30,7 @@ export const projects = [
     badge: "Live 24/7",
     image: botsImg,
     objectPosition: "object-center",
+    cardHeight: "min-h-96 md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
     name: "CooperaApp — Transparency for School Cooperatives",
@@ -41,6 +42,7 @@ export const projects = [
     badge: ["Web2 + Web3", "Launching 2027"],
     image: cooperadoraImg,
     objectPosition: "object-top",
+    cardHeight: "min-h-96 md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
     name: "DAO — Hackathon Ethereum 2024",
