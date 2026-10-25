@@ -17,6 +17,8 @@ export const projects = [
     badge: "In production",
     image: comandaImg,
     objectPosition: "object-left-top",
+    // Long description: taller card so the screenshot still shows above the text.
+    cardHeight: "min-h-96 md:min-h-[38rem] xl:min-h-[34rem]",
   },
   {
     name: "Automated Trading Bots — Hyperliquid",

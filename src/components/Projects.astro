@@ -15,7 +15,7 @@ import { projects } from '../data/projects';
           Other work
         </h3>
       )}
-      <div class="group relative rounded-xl border border-slate-800 hover:border-slate-600 active:scale-[0.98] active:border-amber-300/30 transition-all duration-300 overflow-hidden min-h-96 flex flex-col justify-end">
+      <div class={`group relative rounded-xl border border-slate-800 hover:border-slate-600 active:scale-[0.98] active:border-amber-300/30 transition-all duration-300 overflow-hidden flex flex-col justify-end ${project.cardHeight ?? 'min-h-96'}`}>
 
         {project.image ? (
           <img
