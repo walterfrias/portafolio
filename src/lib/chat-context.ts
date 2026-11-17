@@ -25,7 +25,7 @@ Education and certifications:
 
 Highlights:
 - 1st place at the ETH KIPU Latam Academic Hackathon 2024, building a DAO in 48 hours.
-- Builds software for problems he lives first-hand, and runs it in production: Comanda (used daily in a real restaurant), two trading bots on his own Ubuntu server, and CooperaApp (launching in 2027).
+- Builds software for problems he lives first-hand: Comanda (in production, used daily in a real restaurant), two trading bots running on his own Ubuntu server, and CooperaApp (built for his school cooperative, not launched yet).
 - Applied AI: invoice reading with Claude vision and structured outputs in Comanda's mobile app (in development). This chat assistant is live: an Astro site calling the Claude API from a serverless function with streaming responses.
 
 Languages: Spanish (native), English (intermediate, actively improving with private lessons).
@@ -37,7 +37,7 @@ const projectsText = projects
   .map((p) => {
     const lines = [`- ${p.name}${p.badge ? ` (${p.badge})` : ''}: ${p.description}`, `  Stack: ${p.tags.join(', ')}`];
     if (p.url) lines.push(`  Live: ${p.url}`);
-    if (p.devpost) lines.push(`  Devpost: ${p.devpost}`);
+    for (const link of p.links) lines.push(`  ${link.label}: ${link.url}`);
     return lines.join('\n');
   })
   .join('\n');

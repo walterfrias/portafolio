@@ -53,22 +53,22 @@ import { projects } from '../data/projects';
               )}
             </h3>
 
-            <div class="flex flex-wrap items-center justify-end gap-2 shrink-0">
+            <div class="flex flex-wrap items-center gap-2 min-w-0 md:justify-end">
               {[project.badge].flat().filter(Boolean).map((badge) => (
                 <span class="text-xs font-semibold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-1 rounded-full">
                   {badge}
                 </span>
               ))}
-              {project.devpost && (
+              {project.links.map((link) => (
                 <a
-                  href={project.devpost}
+                  href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-xs font-semibold text-slate-400 border border-slate-700 hover:border-slate-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 px-3 py-3 rounded-full transition-colors duration-200"
                 >
-                  Devpost ↗
+                  {link.label} ↗
                 </a>
-              )}
+              ))}
             </div>
           </div>
 
