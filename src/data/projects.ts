@@ -30,7 +30,7 @@ export const projects = [
     tags: ["React Native", "Expo", "TypeScript", "NestJS", "PostgreSQL", "Supabase", "Docker", "EAS", "FCM"],
     url: null,
     links: [{ label: "Code", url: "https://github.com/walterfrias/mi_ciudad_movil/tree/desarrollo" }],
-    badge: ["Team project", "Fully deployed"],
+    badge: "Fully deployed",
     // Map, event with the real push banner on top, visit form.
     image: miCiudadImg,
     objectPosition: "object-top",

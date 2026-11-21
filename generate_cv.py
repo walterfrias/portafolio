@@ -109,7 +109,7 @@ projects = [
         "url": "https://www.comanda.com.ar/",
     },
     {
-        "title": "Mi Ciudad - Tourist Guide App for Android (Team project, 2026)",
+        "title": "Mi Ciudad - Tourist Guide App for Android (2026)",
         "stack": "React Native / Expo / TypeScript / NestJS / PostgreSQL / Supabase / Docker / EAS / FCM",
         "bullets": [
             "Android tourist guide for a city in Entre Rios, built by a team of six from a PRD written by its "
