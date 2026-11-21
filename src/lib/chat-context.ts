@@ -4,7 +4,7 @@ import { skills } from '../data/skills';
 // Only information already public on the site or in the downloadable CV goes here.
 const profile = `
 Name: Walter Frias
-Role: Product Engineer: 10+ years running operations, applied AI, full stack (Python · TypeScript)
+Role: Product Engineer: 10+ years running a business, applied AI, full stack (Python · TypeScript)
 Location: Buenos Aires, Argentina
 Email: walter.frias.dev@gmail.com
 GitHub: https://github.com/walterfrias

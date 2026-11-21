@@ -55,7 +55,7 @@ pdf.cell(TW, 10, "Walter Frias", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 pdf.set_font("Helvetica", "", 11)
 pdf.set_text_color(80, 80, 80)
 pdf.set_x(LM)
-pdf.cell(TW, 5, "Product Engineer  |  Applied AI  |  10+ years in operations", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+pdf.cell(TW, 5, "Product Engineer  |  Applied AI  |  10+ years running a business", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 pdf.ln(2)
 
 # ── CONTACT ───────────────────────────────────────────────────
