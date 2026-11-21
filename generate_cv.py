@@ -135,7 +135,7 @@ projects = [
         "url": None,
     },
     {
-        "title": "CooperaApp - Transparency for School Cooperatives (Launching 2027)",
+        "title": "CooperaApp - Transparency for School Cooperatives",
         "stack": "Django REST Framework / React / TypeScript / Vite / PostgreSQL / Docker / Solidity",
         "bullets": [
             "Born from my term as cooperative president: parents distrusted how dues and funds were handled, "
