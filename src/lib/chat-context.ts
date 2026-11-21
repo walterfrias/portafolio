@@ -18,7 +18,7 @@ Background:
 - Ontological Leadership Coaching (ProCp, 2018).
 
 Education and certifications:
-- Universidad Nacional de Entre Ríos (UNER): Web Development degree, 2024–present.
+- Universidad Nacional de Entre Ríos (UNER): University Technician in Web Development (Técnico Universitario en Desarrollo Web), three-year program, 2024–2026, graduated in 2026.
 - ETH KIPU Latam: Ethereum Developer Pack, 2024 (on-chain certificate).
 - Talento Tech (Buenos Aires Ministry of Education): Node.js & React.js, 2025.
 - Codo a Codo (Buenos Aires Ministry of Education): Full Stack Python + Django, 2022–2023.
