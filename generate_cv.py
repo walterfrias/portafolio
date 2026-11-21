@@ -109,6 +109,19 @@ projects = [
         "url": "https://www.comanda.com.ar/",
     },
     {
+        "title": "Mi Ciudad - Tourist Guide App for Android (Team project, 2026)",
+        "stack": "React Native / Expo / TypeScript / NestJS / PostgreSQL / Supabase / Docker / EAS / FCM",
+        "bullets": [
+            "Android tourist guide for a city in Entre Rios, built by a team of six from a PRD written by its "
+            "tourism office: places on a map, events calendar, audio guides and a personal visit log.",
+            "My part, about half the commits: push notifications end to end (token store and sender in the NestJS "
+            "API, FCM in the app), offline support with a visit queue that uploads when signal returns.",
+            "Visit check-in by QR code or GPS proximity, fingerprint unlock, design system with dark mode; deployed "
+            "the API (Docker, Render, Supabase) and shipped production builds with EAS.",
+        ],
+        "url": "https://github.com/walterfrias/mi_ciudad_movil/tree/desarrollo",
+    },
+    {
         "title": "Automated Trading Bots - Hyperliquid (Live 24/7 since April 2026)",
         "stack": "Python / asyncio / Hyperliquid SDK / systemd / Ubuntu Server / Telegram Bot API",
         "bullets": [
@@ -238,7 +251,7 @@ pdf.section_title("Education & Certifications")
 
 edu = [
     ("Universidad Nacional de Entre Rios (UNER)",
-     "Tecnicatura Universitaria en Desarrollo Web (Web Development degree)  |  2024 - 2026"),
+     "Técnico Universitario en Desarrollo Web (University Technician in Web Development)  |  2024 - 2026  -  graduated"),
     ("ETH KIPU Latam",
      "Ethereum Developer Pack  |  2024  -  on-chain certificate"),
     ("Talento Tech - Buenos Aires Ministry of Education",
