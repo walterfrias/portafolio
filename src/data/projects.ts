@@ -29,7 +29,7 @@ export const projects = [
       "Android tourist guide for a city in Entre Ríos, built by a team of six from a PRD written by its tourism office. Places on a map, an events calendar, audio guides and a personal visit log. My part, about half the commits: push notifications end to end (token store and sender in the NestJS API, FCM in the app), offline support with a visit queue that uploads when signal returns, visit check-in by QR code or GPS proximity, fingerprint unlock, the design system with dark mode, and deploying the API (Docker, Render, Supabase) plus production builds with EAS.",
     tags: ["React Native", "Expo", "TypeScript", "NestJS", "PostgreSQL", "Supabase", "Docker", "EAS", "FCM"],
     url: null,
-    links: [{ label: "Code", url: "https://github.com/walterfrias/mi_ciudad_movil/tree/desarrollo" }],
+    links: [{ label: "Code", url: "https://github.com/walterfrias/mi_ciudad_movil" }],
     badge: "Fully deployed",
     // Map, event with the real push banner on top, visit form.
     image: miCiudadImg,

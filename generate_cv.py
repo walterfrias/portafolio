@@ -119,7 +119,7 @@ projects = [
             "Visit check-in by QR code or GPS proximity, fingerprint unlock, design system with dark mode; deployed "
             "the API (Docker, Render, Supabase) and shipped production builds with EAS.",
         ],
-        "url": "https://github.com/walterfrias/mi_ciudad_movil/tree/desarrollo",
+        "url": "https://github.com/walterfrias/mi_ciudad_movil",
     },
     {
         "title": "Automated Trading Bots - Hyperliquid (Live 24/7 since April 2026)",
