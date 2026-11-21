@@ -5,6 +5,7 @@ import gestorImg from '../assets/gestor.png';
 import comandaImg from '../assets/comanda.png';
 import botsImg from '../assets/bots.jpg';
 import pacienteZeroImg from '../assets/paciente-zero.png';
+import miCiudadImg from '../assets/mi-ciudad.png';
 
 // `secondary` projects are listed under "Other work", after the main ones.
 // `links` are extra buttons next to the badges (Devpost, gameplay video, repo...).
@@ -21,6 +22,19 @@ export const projects = [
     objectPosition: "object-left-top",
     // Long description: taller card so the screenshot still shows above the text.
     cardHeight: "md:min-h-[38rem] xl:min-h-[34rem]",
+  },
+  {
+    name: "Mi Ciudad — Tourist Guide App for Android",
+    description:
+      "Android tourist guide for a city in Entre Ríos, built by a team of six from a PRD written by its tourism office. Places on a map, an events calendar, audio guides and a personal visit log. My part, about half the commits: push notifications end to end (token store and sender in the NestJS API, FCM in the app), offline support with a visit queue that uploads when signal returns, visit check-in by QR code or GPS proximity, fingerprint unlock, the design system with dark mode, and deploying the API (Docker, Render, Supabase) plus production builds with EAS.",
+    tags: ["React Native", "Expo", "TypeScript", "NestJS", "PostgreSQL", "Supabase", "Docker", "EAS", "FCM"],
+    url: null,
+    links: [{ label: "Code", url: "https://github.com/walterfrias/mi_ciudad_movil/tree/desarrollo" }],
+    badge: ["Team project", "Fully deployed"],
+    // Map, event with the real push banner on top, visit form.
+    image: miCiudadImg,
+    objectPosition: "object-top",
+    cardHeight: "md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
     name: "Automated Trading Bots — Hyperliquid",
