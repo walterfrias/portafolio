@@ -56,9 +56,9 @@ export const projects = [
     cardHeight: "md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
-    name: "CooperaApp — Transparency for School Cooperatives",
+    name: "CooperaApp — Multi-tenant Platform for School Cooperatives",
     description:
-      "As president of a school cooperative, I saw parents distrust it: dues and funds lived only inside the cooperative, with no way to share them. CooperaApp shows every family paid dues, funds raised and school news. It rolls out without blockchain — parents don't need a DAO to trust the numbers. A DAO-per-school version (testnet) is built for scaling later.",
+      "As president of a school cooperative, I saw parents distrust it: dues and funds lived only inside the cooperative, with no way to share them. CooperaApp shows every family paid dues, funds raised and school news. It's multi-tenant from day one: any school cooperative can join with its data fully isolated. It rolls out without blockchain — parents don't need a DAO to trust the numbers. A DAO-per-school version (testnet) is built for scaling later.",
     tags: ["Django REST", "React", "TypeScript", "Vite", "PostgreSQL", "Docker", "Solidity"],
     url: "https://cooperadora-escuela-27.vercel.app/",
     links: [],
