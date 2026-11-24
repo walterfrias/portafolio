@@ -21,8 +21,11 @@ export const projects = [
     badge: "In production",
     image: comandaImg,
     objectPosition: "object-left-top",
+    fitDesktop: "contain",
+    // Light screenshot: fill with its main content background (gray-100).
+    fitBg: "md:bg-[#f3f4f6]",
     // Long description: taller card so the screenshot still shows above the text.
-    cardHeight: "md:min-h-[38rem] xl:min-h-[34rem]",
+    cardHeight: "md:min-h-[48rem] lg:min-h-[42rem]",
   },
   {
     name: "Mi Ciudad — Tourist Guide App for Android",
@@ -35,6 +38,8 @@ export const projects = [
     // Map, event with the real push banner on top, visit form.
     image: miCiudadImg,
     objectPosition: "object-top",
+    // Wide 3-phone shot: show it whole on desktop instead of cropping the sides.
+    fitDesktop: "contain",
     cardHeight: "md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
@@ -46,7 +51,9 @@ export const projects = [
     links: [],
     badge: "In production",
     image: botsImg,
-    objectPosition: "object-center",
+    // Top-aligned so the text panel covers as little of the chats as possible.
+    objectPosition: "object-top",
+    fitDesktop: "contain",
     cardHeight: "md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
@@ -59,6 +66,9 @@ export const projects = [
     badge: "Web2 + Web3",
     image: cooperadoraImg,
     objectPosition: "object-top",
+    fitDesktop: "contain",
+    // Matches the screenshot's page background so the letterbox blends in.
+    fitBg: "md:bg-[#101828]",
     cardHeight: "md:min-h-[34rem] xl:min-h-[30rem]",
   },
   {
