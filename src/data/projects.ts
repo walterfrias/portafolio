@@ -22,8 +22,7 @@ export const projects = [
     image: comandaImg,
     objectPosition: "object-left-top",
     fitDesktop: "contain",
-    // Light screenshot: fill with its main content background (gray-100).
-    fitBg: "md:bg-[#f3f4f6]",
+    // No light fitBg: the letterbox sits behind the text panel and showed as a white block on hover.
     // Long description: taller card so the screenshot still shows above the text.
     cardHeight: "md:min-h-[48rem] lg:min-h-[42rem]",
   },
